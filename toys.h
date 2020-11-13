@@ -32,6 +32,7 @@
 #include <string.h>
 #include <strings.h>
 #include <sys/mman.h>
+#include <linux/mman.h>
 #include <sys/resource.h>
 #include <sys/stat.h>
 #include <sys/statvfs.h>

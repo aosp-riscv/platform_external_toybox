@@ -276,7 +276,12 @@ static inline int __system_property_set(const char *key, const char *value)
 
 // libcutils is in AOSP but not Android NDK r18
 #if defined(__BIONIC__) && !defined(__ANDROID_NDK__)
-#include <cutils/sched_policy.h>
+//#include <cutils/sched_policy.h>
+// TBD, get_sched_policy* are defined in libprocessgroup, which is 
+// an aosp platform lib, to use it will involve too many aosp libs.
+// So currently just fake them to pass build.
+static inline int get_sched_policy(int tid, void *policy) {return 0;}
+static inline char *get_sched_policy_name(int policy) {return "unknown";}
 #else
 static inline int get_sched_policy(int tid, void *policy) {return 0;}
 static inline char *get_sched_policy_name(int policy) {return "unknown";}

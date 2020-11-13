@@ -24,10 +24,10 @@
 #define USE_TOYBOX_I18N(...) __VA_ARGS__
 #define CFG_TOYBOX_ICONV 1
 #define USE_TOYBOX_ICONV(...) __VA_ARGS__
-#define CFG_TOYBOX_LIBCRYPTO 1
-#define USE_TOYBOX_LIBCRYPTO(...) __VA_ARGS__
-#define CFG_TOYBOX_LIBZ 1
-#define USE_TOYBOX_LIBZ(...) __VA_ARGS__
+#define CFG_TOYBOX_LIBCRYPTO 0
+#define USE_TOYBOX_LIBCRYPTO(...)
+#define CFG_TOYBOX_LIBZ 0
+#define USE_TOYBOX_LIBZ(...)
 #define CFG_TOYBOX_LSM_NONE 0
 #define USE_TOYBOX_LSM_NONE(...)
 #define CFG_TOYBOX_MUSL_NOMMU_IS_BROKEN 0
@@ -40,8 +40,8 @@
 #define USE_TOYBOX_ANDROID_SCHEDPOLICY(...) __VA_ARGS__
 #define CFG_TOYBOX_PEDANTIC_ARGS 0
 #define USE_TOYBOX_PEDANTIC_ARGS(...)
-#define CFG_TOYBOX_SELINUX 1
-#define USE_TOYBOX_SELINUX(...) __VA_ARGS__
+#define CFG_TOYBOX_SELINUX 0
+#define USE_TOYBOX_SELINUX(...)
 #define CFG_TOYBOX_SHADOW 0
 #define USE_TOYBOX_SHADOW(...)
 #define CFG_TOYBOX_SMACK 0
@@ -90,8 +90,8 @@
 #define USE_CD(...)
 #define CFG_CHATTR 1
 #define USE_CHATTR(...) __VA_ARGS__
-#define CFG_CHCON 1
-#define USE_CHCON(...) __VA_ARGS__
+#define CFG_CHCON 0
+#define USE_CHCON(...)
 #define CFG_CHGRP 1
 #define USE_CHGRP(...) __VA_ARGS__
 #define CFG_CHMOD 1
@@ -224,8 +224,8 @@
 #define USE_FTPPUT(...)
 #define CFG_GETCONF 1
 #define USE_GETCONF(...) __VA_ARGS__
-#define CFG_GETENFORCE 1
-#define USE_GETENFORCE(...) __VA_ARGS__
+#define CFG_GETENFORCE 0
+#define USE_GETENFORCE(...)
 #define CFG_GETFATTR 1
 #define USE_GETFATTR(...) __VA_ARGS__
 #define CFG_GETPROP 0
@@ -240,10 +240,10 @@
 #define USE_GROUPDEL(...)
 #define CFG_GROUPS 1
 #define USE_GROUPS(...) __VA_ARGS__
-#define CFG_GUNZIP 1
-#define USE_GUNZIP(...) __VA_ARGS__
-#define CFG_GZIP 1
-#define USE_GZIP(...) __VA_ARGS__
+#define CFG_GUNZIP 0
+#define USE_GUNZIP(...)
+#define CFG_GZIP 0
+#define USE_GZIP(...)
 #define CFG_HEAD 1
 #define USE_HEAD(...) __VA_ARGS__
 #define CFG_HELLO 0
@@ -314,16 +314,16 @@
 #define USE_LINK(...)
 #define CFG_LN 1
 #define USE_LN(...) __VA_ARGS__
-#define CFG_LOAD_POLICY 1
-#define USE_LOAD_POLICY(...) __VA_ARGS__
+#define CFG_LOAD_POLICY 0
+#define USE_LOAD_POLICY(...)
 #define CFG_LOGGER 0
 #define USE_LOGGER(...)
 #define CFG_LOGIN 0
 #define USE_LOGIN(...)
 #define CFG_LOGNAME 1
 #define USE_LOGNAME(...) __VA_ARGS__
-#define CFG_LOG 1
-#define USE_LOG(...) __VA_ARGS__
+#define CFG_LOG 0
+#define USE_LOG(...)
 #define CFG_LOGWRAPPER 0
 #define USE_LOGWRAPPER(...)
 #define CFG_LOSETUP 1
@@ -472,8 +472,8 @@
 #define USE_RENICE(...) __VA_ARGS__
 #define CFG_RESET 0
 #define USE_RESET(...)
-#define CFG_RESTORECON 1
-#define USE_RESTORECON(...) __VA_ARGS__
+#define CFG_RESTORECON 0
+#define USE_RESTORECON(...)
 #define CFG_REV 1
 #define USE_REV(...) __VA_ARGS__
 #define CFG_RFKILL 1
@@ -486,20 +486,20 @@
 #define USE_RM(...) __VA_ARGS__
 #define CFG_ROUTE 0
 #define USE_ROUTE(...)
-#define CFG_RUNCON 1
-#define USE_RUNCON(...) __VA_ARGS__
+#define CFG_RUNCON 0
+#define USE_RUNCON(...)
 #define CFG_SED 1
 #define USE_SED(...) __VA_ARGS__
-#define CFG_SENDEVENT 1
-#define USE_SENDEVENT(...) __VA_ARGS__
+#define CFG_SENDEVENT 0
+#define USE_SENDEVENT(...)
 #define CFG_SEQ 1
 #define USE_SEQ(...) __VA_ARGS__
-#define CFG_SETENFORCE 1
-#define USE_SETENFORCE(...) __VA_ARGS__
+#define CFG_SETENFORCE 0
+#define USE_SETENFORCE(...)
 #define CFG_SETFATTR 1
 #define USE_SETFATTR(...) __VA_ARGS__
-#define CFG_SETPROP 1
-#define USE_SETPROP(...) __VA_ARGS__
+#define CFG_SETPROP 0
+#define USE_SETPROP(...)
 #define CFG_SETSID 1
 #define USE_SETSID(...) __VA_ARGS__
 #define CFG_SHA1SUM 1
@@ -534,12 +534,12 @@
 #define USE_SORT(...) __VA_ARGS__
 #define CFG_SPLIT 1
 #define USE_SPLIT(...) __VA_ARGS__
-#define CFG_START 1
-#define USE_START(...) __VA_ARGS__
+#define CFG_START 0
+#define USE_START(...)
 #define CFG_STAT 1
 #define USE_STAT(...) __VA_ARGS__
-#define CFG_STOP 1
-#define USE_STOP(...) __VA_ARGS__
+#define CFG_STOP 0
+#define USE_STOP(...)
 #define CFG_STRINGS 1
 #define USE_STRINGS(...) __VA_ARGS__
 #define CFG_STTY 1
@@ -666,5 +666,5 @@
 #define USE_XZCAT(...)
 #define CFG_YES 1
 #define USE_YES(...) __VA_ARGS__
-#define CFG_ZCAT 1
-#define USE_ZCAT(...) __VA_ARGS__
+#define CFG_ZCAT 0
+#define USE_ZCAT(...)

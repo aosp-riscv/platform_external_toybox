@@ -61,8 +61,8 @@ void seq_main(void)
 
   if (!TT.s) TT.s = "\n";
   switch (toys.optc) {
-    case 3: increment = parsef(toys.optargs[1]);
-    case 2: first = parsef(*toys.optargs);
+    case 3: increment = parsef(toys.optargs[1]); __attribute__((fallthrough));
+    case 2: first = parsef(*toys.optargs); __attribute__((fallthrough));
     default: last = parsef(toys.optargs[toys.optc-1]);
   }
 

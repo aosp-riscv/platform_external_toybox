@@ -4221,6 +4221,7 @@ static BcStatus bc_parse_expr_err(BcParse *p, uint8_t flags, BcParseNext next) {
         }
       }
       // Fallthrough.
+      __attribute__((fallthrough));
       case BC_LEX_OP_POWER:
       case BC_LEX_OP_MULTIPLY:
       case BC_LEX_OP_DIVIDE:
@@ -4546,6 +4547,7 @@ static BcStatus bc_program_num(BcProgram *p, BcResult *r, BcNum **num) {
       }
 
       r->t = BC_RESULT_TEMP;
+      __attribute__((fallthrough));
     }
     // Fallthrough.
     case BC_RESULT_STR:
@@ -5411,6 +5413,7 @@ BcStatus bc_program_exec(BcProgram *p) {
         if (s) return s;
         cond = !BC_NUM_CMP_ZERO(num);
         bc_vec_pop(&p->results);
+        __attribute__((fallthrough));
       }
       // Fallthrough.
       case BC_INST_JUMP:
