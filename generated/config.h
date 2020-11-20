@@ -230,8 +230,8 @@
 #define USE_GETFATTR(...) __VA_ARGS__
 #define CFG_GETPROP 0
 #define USE_GETPROP(...)
-#define CFG_GETTY 0
-#define USE_GETTY(...)
+#define CFG_GETTY 1
+#define USE_GETTY(...) __VA_ARGS__
 #define CFG_GREP 1
 #define USE_GREP(...) __VA_ARGS__
 #define CFG_GROUPADD 0
@@ -278,8 +278,8 @@
 #define USE_ID_Z(...) __VA_ARGS__
 #define CFG_IFCONFIG 1
 #define USE_IFCONFIG(...) __VA_ARGS__
-#define CFG_INIT 0
-#define USE_INIT(...)
+#define CFG_INIT 1
+#define USE_INIT(...) __VA_ARGS__
 #define CFG_INOTIFYD 1
 #define USE_INOTIFYD(...) __VA_ARGS__
 #define CFG_INSMOD 1
@@ -352,10 +352,10 @@
 #define USE_MCOOKIE(...)
 #define CFG_MD5SUM 1
 #define USE_MD5SUM(...) __VA_ARGS__
-#define CFG_MDEV_CONF 0
-#define USE_MDEV_CONF(...)
-#define CFG_MDEV 0
-#define USE_MDEV(...)
+#define CFG_MDEV_CONF 1
+#define USE_MDEV_CONF(...) __VA_ARGS__
+#define CFG_MDEV 1
+#define USE_MDEV(...) __VA_ARGS__
 #define CFG_MICROCOM 1
 #define USE_MICROCOM(...) __VA_ARGS__
 #define CFG_MIX 0

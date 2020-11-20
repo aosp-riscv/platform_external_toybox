@@ -188,6 +188,7 @@ static void make_device(char *path)
                   switch(name[0]){
                     case '>':
                       create_symlink = true;
+                      __attribute__((fallthrough));
                     case '=':
                       custom_name = strdup(&name[1]);
                       break;
@@ -231,8 +232,9 @@ found_device:
         else mkdir(toybuf, 0755);
       }
     }
-    else
+    else {
       sprintf(toybuf, "/dev/%s", device_name);
+    }
 
       if ((temp=getenv("ACTION")) && !strcmp(temp, "remove")) {
         unlink(toybuf);

@@ -132,7 +132,8 @@ static void inittab_parsing(void)
   if (fd < 0) {
     error_msg("Unable to open /etc/inittab. Using Default inittab");
     add_new_action(SYSINIT, "/etc/init.d/rcS", "");
-    add_new_action(RESPAWN, "/sbin/getty -n -l /bin/sh -L 115200 tty1 vt100", "");
+    //add_new_action(RESPAWN, "/sbin/getty -n -l /bin/sh -L 115200 tty1 vt100", "");
+    add_new_action(RESPAWN, "/bin/sh", "");
   } else {
     while((q = p = get_line(fd))) { //read single line from /etc/inittab
       char *x;
@@ -255,7 +256,7 @@ static pid_t final_run(struct action_list_seed *x)
 
   if (x->terminal_name[0]) {
     close(0);
-    fd = open(x->terminal_name, (O_RDWR|O_NONBLOCK),0600);
+    fd = open(x->terminal_name, (O_CREAT|O_RDWR|O_NONBLOCK),0600);
     if (fd != 0) {
       error_msg("Unable to open %s,%s\n", x->terminal_name, strerror(errno));
       _exit(EXIT_FAILURE);
@@ -379,7 +380,7 @@ static void restart_init_handler(int sig_no)
 
     if (x->terminal_name[0]) {
       close(0);
-      fd = open(x->terminal_name, (O_RDWR|O_NONBLOCK),0600);
+      fd = open(x->terminal_name, (O_CREAT|O_RDWR|O_NONBLOCK),0600);
 
       if (fd != 0) {
         error_msg("Unable to open %s,%s\n", x->terminal_name, strerror(errno));
